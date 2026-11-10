@@ -1,0 +1,910 @@
+{
+  "service": "checkout-api",
+  "environment": "prod",
+  "window": {
+    "start": "2026-03-12T10:00:00Z",
+    "end": "2026-03-12T10:30:00Z"
+  },
+  "alerts": [
+    {
+      "name": "HighMemoryUsage",
+      "severity": "warning",
+      "starts_at": "2026-03-12T10:02:00Z",
+      "summary": "checkout-api memory above 90% of limit"
+    },
+    {
+      "name": "KubePodCrashLooping",
+      "severity": "critical",
+      "starts_at": "2026-03-12T10:05:30Z",
+      "resolved_at": "2026-03-12T10:21:00Z",
+      "summary": "checkout-api pod restarting repeatedly"
+    },
+    {
+      "name": "HighErrorRate",
+      "severity": "critical",
+      "starts_at": "2026-03-12T10:06:10Z",
+      "resolved_at": "2026-03-12T10:22:30Z",
+      "summary": "5xx rate above 5% on checkout-api"
+    }
+  ],
+  "k8s_events": [
+    {
+      "time": "2026-03-12T10:05:20Z",
+      "type": "Warning",
+      "reason": "OOMKilled",
+      "object": "pod/checkout-api-7d9f8b6c5d-x2k4p",
+      "message": "Container checkout-api exceeded memory limit (512Mi)"
+    },
+    {
+      "time": "2026-03-12T10:05:45Z",
+      "type": "Warning",
+      "reason": "BackOff",
+      "object": "pod/checkout-api-7d9f8b6c5d-x2k4p",
+      "message": "Back-off restarting failed container"
+    },
+    {
+      "time": "2026-03-12T10:12:00Z",
+      "type": "Normal",
+      "reason": "ScalingReplicaSet",
+      "object": "deployment/checkout-api",
+      "message": "Scaled up replica set to 4 (HPA)"
+    }
+  ],
+  "logs": [
+    {
+      "time": "2026-03-12T10:02:10Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:10Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:10Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:11Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:11Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:11Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:12Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:12Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:12Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:13Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:13Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:13Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:14Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:14Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:14Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:15Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:15Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:15Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:16Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:16Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:16Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:17Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:17Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:17Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:18Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:18Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:18Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:19Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:19Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:19Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:20Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:20Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:20Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:21Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:21Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:21Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:22Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:22Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:22Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:23Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:23Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:23Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:24Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:24Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:24Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:25Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:25Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:25Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:26Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:26Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:26Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:27Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:27Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:27Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:28Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:28Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:28Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:29Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:29Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:29Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:30Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:30Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:30Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:31Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:31Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:31Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:32Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:32Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:32Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:33Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:33Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:33Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:34Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:34Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:34Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:35Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 91% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:35Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:35Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:36Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:36Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:36Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:37Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:37Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:37Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:38Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:38Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:38Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:39Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:39Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:39Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:40Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:40Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:40Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 90% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:41Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:41Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 94% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:41Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:42Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:42Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:42Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 96% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:43Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:43Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:43Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:44Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:44Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 93% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:44Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:45Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:45Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 97% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:45Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:46Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:46Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:46Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:47Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 95% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:47Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:47Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:48Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 89% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:48Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 88% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:48Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:49Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 99% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:49Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 92% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:02:49Z",
+      "level": "WARN",
+      "message": "GC overhead high: heap used 98% of limit on checkout-api-7d9f8b6c5d-x2k4p"
+    },
+    {
+      "time": "2026-03-12T10:04:00Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.8.46:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:01Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.7.95:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:02Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.1.69:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:03Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.3.88:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:04Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.8.17:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:05Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.5.26:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:06Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.4.60:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:07Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.8.20:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:08Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.8.61:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:09Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.5.27:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:10Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.9.45:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:11Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.7.55:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:12Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.7.39:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:13Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.2.32:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:14Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.4.94:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:15Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.1.72:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:16Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.3.43:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:17Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.1.28:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:18Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.9.57:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:19Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.6.26:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:20Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.9.89:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:21Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.1.68:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:22Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.9.60:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:23Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.7.60:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:24Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.8.91:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:25Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.1.34:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:26Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.4.66:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:27Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.2.53:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:28Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.1.23:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:29Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.3.78:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:30Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.6.88:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:31Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.2.36:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:32Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.7.29:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:33Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.5.54:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:34Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.6.70:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:35Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.2.72:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:36Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.8.71:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:37Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.2.28:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:38Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.6.43:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:39Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.3.76:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:40Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3000ms calling payments-gateway 10.0.4.77:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:41Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.3.98:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:42Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3002ms calling payments-gateway 10.0.1.77:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:43Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.2.99:8443"
+    },
+    {
+      "time": "2026-03-12T10:04:44Z",
+      "level": "ERROR",
+      "message": "upstream timeout after 3001ms calling payments-gateway 10.0.9.56:8443"
+    },
+    {
+      "time": "2026-03-12T10:05:00Z",
+      "level": "ERROR",
+      "message": "Container checkout-api-7d9f8b6c5d-x2k4p terminated: exit code 137"
+    },
+    {
+      "time": "2026-03-12T10:05:07Z",
+      "level": "ERROR",
+      "message": "Container checkout-api-7d9f8b6c5d-x2k4p terminated: exit code 137"
+    },
+    {
+      "time": "2026-03-12T10:05:14Z",
+      "level": "ERROR",
+      "message": "Container checkout-api-7d9f8b6c5d-x2k4p terminated: exit code 137"
+    },
+    {
+      "time": "2026-03-12T10:05:21Z",
+      "level": "ERROR",
+      "message": "Container checkout-api-7d9f8b6c5d-x2k4p terminated: exit code 137"
+    },
+    {
+      "time": "2026-03-12T10:05:28Z",
+      "level": "ERROR",
+      "message": "Container checkout-api-7d9f8b6c5d-x2k4p terminated: exit code 137"
+    },
+    {
+      "time": "2026-03-12T10:05:35Z",
+      "level": "ERROR",
+      "message": "Container checkout-api-7d9f8b6c5d-x2k4p terminated: exit code 137"
+    }
+  ]
+}
